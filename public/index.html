@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./javascripts/jquery-1.12..min.js"></script>
+    <title>Document</title>
+
+</head>
+
+<body>
+    <form>
+        <div>
+            用户:<input id="user" type="text" name="user">
+        </div>
+        <div>
+            密码：<input id="password" type="password" name="password">
+        </div>
+
+        <button id="btn">注册</button>
+    </form>
+
+</body>
+
+</html>
+
+
+<script>
+
+$(document).ready(function(){
+  
+  $("button").click(function(){
+    var user =  document.getElementById(user);
+    var usepasswordr =  document.getElementById(password);
+    $.post("127.0.0.1:3000/users",
+    {
+      name:"user",
+      city:"usepasswordr"
+    },
+    function(data,status){
+      alert("数据：" + data + "\n状态：" + status);
+    });
+  });
+});
+    
+    
+</script>

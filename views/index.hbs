@@ -1,0 +1,42 @@
+{{!--<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>--}}
+
+
+
+
+  <from>
+        <div>
+            用户:<input id="user" type="text" name="user">
+        </div>
+        <div>
+            密码：<input id="password" type="password" name="password">
+        </div>
+
+        <button id="btn">注册</button>
+  </from>
+
+</body>
+
+</html>
+
+
+<script>
+
+$(document).ready(function(){
+  
+  $("button").click(function(){
+    var user =  document.getElementById(user);
+    var usepasswordr =  document.getElementById(password);
+    $.post("127.0.0.1:3000/user",
+    {
+      name:"liyi",
+      city:"123"
+    },
+    function(data,status){
+      alert("数据：" + data + "\n状态：" + status);
+    });
+  });
+});
+    
+    
+</script>
